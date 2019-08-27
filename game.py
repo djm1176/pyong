@@ -31,8 +31,8 @@ camera = Camera()
 background = GameObject(position = Vector2(0, 0), scale = Vector2(SCREENWIDTH, SCREENHEIGHT))
 background.colorize(pygame.Color(255, 255, 255))
 
-#ball = GameObject(position = Vector2(40, 40))
-#ball.colorize(pygame.Color(255, 0, 0))
+ball = GameObject(position = Vector2(40, 40))
+ball.colorize(pygame.Color(255, 0, 0))
 
 while True:
     #TODO: Move inputs into a custom class and handle with single function call

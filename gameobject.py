@@ -47,6 +47,7 @@ class GameObject:
     
     def colorize(self, color):
         self.sprite = pygame.Surface(self.scale)
+        self.sprite.fill(color)
     
     #Sets the position of the objects. X can be substituted with a Vector2
     def setPosition(self, x, y = None):

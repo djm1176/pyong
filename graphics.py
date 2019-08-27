@@ -13,7 +13,7 @@ import utils
 
 class Camera(GameObject):
     
-    def __init__(self):
+    def __init__(self):        
         super().__init__()
         
     def render(self, display):
@@ -22,7 +22,7 @@ class Camera(GameObject):
             if obj.__class__ in [Camera]: continue
             if obj.visible:
                 #Reorient position (pygame renders topleft to bottomright)
-                new_pos = Vector2(obj.position.x, display.get_height() - obj.position.y - obj.scale.y)
+                new_pos = (obj.position.x, display.get_height() - obj.position.y - obj.scale.y)
                 
                 #Call a basic render function for GameObject, or custom implementation for all other inherited classes
                 #Note: All classes that inherit GameObject MUST implement render, even if it just does the same basic implementation
@@ -30,3 +30,6 @@ class Camera(GameObject):
                     display.blit(obj.getSprite(), new_pos)
                 else:
                     obj.render(display, new_pos)
+                    
+    def testRender(self, display):
+        display.blit(self._sprite, (0, 0))
